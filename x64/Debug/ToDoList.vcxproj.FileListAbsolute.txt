@@ -1,0 +1,2 @@
+C:\Users\Atlan\OneDrive\Cpp-uceni\ToDoList\x64\Debug\ToDoList.exe
+C:\Users\Atlan\OneDrive\Cpp-uceni\CPP_ToDo\x64\Debug\ToDoList.exe
