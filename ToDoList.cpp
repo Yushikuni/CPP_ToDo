@@ -3,6 +3,26 @@
 
 #include <iostream>
 
+using namespace std;
+
+// struktura pro todo ulohu
+struct ToDoTask
+{
+    bool complete;
+    string taskName;
+    string taskAout;
+};
+
+void GiveMeAllMyTask()
+{
+
+}
+
+void AddNewTask()
+{
+
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
