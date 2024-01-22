@@ -10,7 +10,7 @@ struct ToDoTask
 {
     bool complete;
     string taskName;
-    string taskAout;
+    string taskAbout;
 };
 
 void GiveMeAllMyTask()
@@ -18,7 +18,7 @@ void GiveMeAllMyTask()
 
 }
 
-void AddNewTask()
+void AddNewTask(bool isTaskComplete, string setTaskName, string setAboutTask)
 {
 
 }
@@ -28,6 +28,44 @@ int main()
     std::cout << "Hello World!\n";
 
     std::cout << "Hello There!\n";
+    int ui = -1;
+    string userInput = "";
+    do
+    {
+        cout << " Option Menu: "
+            "\n 0 — For terminate programm"
+            "\n 1 - For Add New Task"
+            "\n 2 - For Print All Tasks"
+            "\n You Choose: ";
+        cin >> userInput;       
+        ui = atoi(userInput.c_str());
+    } while (ui != 0);
+    /*
+    try
+    {
+        int ui = atoi(userInput.c_str());
+        try
+        {
+            switch (ui)
+            {
+            case 1:
+                AddNewTask(false, "Test", "About test is text about test :D");
+            default:
+                break;
+            }
+        }
+        catch (const std::exception&)
+        {
+            cout << "Convert from string to int was not successfull, programw will be terminated…";
+            return 0;
+        }
+    }
+    catch (const std::exception&)
+    {
+        cout << "User did not set number… program will be terminated…";
+        return 0;
+    }*/
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
