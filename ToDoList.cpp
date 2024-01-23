@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -20,7 +21,11 @@ void GiveMeAllMyTask()
 
 void AddNewTask(bool isTaskComplete, string setTaskName, string setAboutTask)
 {
-
+    ofstream myfile;
+    myfile.open("example.txt", ios::app);
+    myfile << "Writing this to a file.\n";
+    myfile << " Task Compete: " << boolalpha << isTaskComplete << "\n Task Name: " << setTaskName << "\n Task is about: " << setAboutTask << "\n";
+    myfile.close();
 }
 
 int main()
@@ -39,6 +44,22 @@ int main()
             "\n You Choose: ";
         cin >> userInput;       
         ui = atoi(userInput.c_str());
+
+        switch (ui)
+        {
+        case 1:
+            AddNewTask(false, "Test", "About test is text about test :D");
+            break;
+        case 2:
+            GiveMeAllMyTask();
+            break;
+        case 0:
+            cout << "Bay-Bay";
+            break;
+        default:
+            break;
+        }
+
     } while (ui != 0);
     /*
     try
