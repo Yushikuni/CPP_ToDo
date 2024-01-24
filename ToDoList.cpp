@@ -16,16 +16,26 @@ struct ToDoTask
 
 void GiveMeAllMyTask()
 {
-
+    cout << "Here it is";
 }
 
-void AddNewTask(bool isTaskComplete, string setTaskName, string setAboutTask)
+void AddNewTask(int taskIndex, bool isTaskComplete, string setTaskName, string setAboutTask)
 {
     ofstream myfile;
     myfile.open("example.txt", ios::app);
     myfile << "Writing this to a file.\n";
-    myfile << " Task Compete: " << boolalpha << isTaskComplete << "\n Task Name: " << setTaskName << "\n Task is about: " << setAboutTask << "\n";
+    myfile << " Task index: " << taskIndex 
+        << "\n Task Compete : " << boolalpha << isTaskComplete 
+        << "\n Task Name : " << setTaskName 
+        << "\n Task is about : " << setAboutTask 
+        << endl;
+        
     myfile.close();
+}
+
+void UpdateTask()
+{
+    cout << "Updating";
 }
 
 int main()
@@ -38,9 +48,10 @@ int main()
     do
     {
         cout << " Option Menu: "
-            "\n 0 — For terminate programm"
+            "\n 0 - For terminate programm"
             "\n 1 - For Add New Task"
             "\n 2 - For Print All Tasks"
+            "\n 3 - For Update Tasks"
             "\n You Choose: ";
         cin >> userInput;       
         ui = atoi(userInput.c_str());
@@ -48,14 +59,19 @@ int main()
         switch (ui)
         {
         case 1:
-            AddNewTask(false, "Test", "About test is text about test :D");
+            AddNewTask(0,false, "Test", "About test is text about test :D");
             break;
         case 2:
             GiveMeAllMyTask();
             break;
+        case 3:
+            UpdateTask();
+            break;
+
         case 0:
             cout << "Bay-Bay";
             break;
+
         default:
             break;
         }
