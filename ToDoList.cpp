@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>sy
 
 using namespace std;
 
@@ -14,23 +15,66 @@ struct ToDoTask
     string taskAbout;
 };
 
+int ReadOnlyFromFile()
+{
+    int lastTaskIndex = 0;
+    // Open file
+    ifstream myfile ("example.txt");
+
+    if (myfile.is_open())
+    {
+        /*while (getline(myfile, line))
+        {
+            cout << line << '\n';
+        }*/
+        myfile.close();
+    }
+
+    else cout << "Unable to open file";
+    
+    // Find indexes
+    // Count index up to last
+    // Return last index 
+
+    return lastTaskIndex;
+}
+
+void WriteToTXTFile(int index, bool complete, string taskName, string aboutTask)
+{
+    ofstream myfile;
+    myfile.open("example.txt", ios::app);
+    myfile << "Writing this to a file.\n";
+    myfile << index << (boolalpha) << complete << taskName << aboutTask << endl;
+    myfile.close();
+}
+
+void WriteTask()
+{
+    int index = -1;
+    bool complete = false;
+    string taskName = "TASK NAME";
+    string aboutTask = "ABOUT TASK";
+    
+    cout << " Is task already done?: ";
+    cin >> complete;
+    cout << "\n Task Name: ";
+    cin >> taskName;
+    cout << "\n Task is about: ";
+    cin >> aboutTask;
+
+    WriteToTXTFile(index, complete, taskName, aboutTask);
+
+    cout << "Writing to txt file ...";
+}
+
 void GiveMeAllMyTask()
 {
     cout << "Here it is";
 }
 
-void AddNewTask(int taskIndex, bool isTaskComplete, string setTaskName, string setAboutTask)
+void AddNewTask()
 {
-    ofstream myfile;
-    myfile.open("example.txt", ios::app);
-    myfile << "Writing this to a file.\n";
-    myfile << " Task index: " << taskIndex 
-        << "\n Task Compete : " << boolalpha << isTaskComplete 
-        << "\n Task Name : " << setTaskName 
-        << "\n Task is about : " << setAboutTask 
-        << endl;
-        
-    myfile.close();
+    WriteTask();
 }
 
 void UpdateTask()
@@ -41,8 +85,6 @@ void UpdateTask()
 int main()
 {
     std::cout << "Hello World!\n";
-
-    std::cout << "Hello There!\n";
     int ui = -1;
     string userInput = "";
     do
@@ -59,7 +101,7 @@ int main()
         switch (ui)
         {
         case 1:
-            AddNewTask(0,false, "Test", "About test is text about test :D");
+            AddNewTask();
             break;
         case 2:
             GiveMeAllMyTask();
