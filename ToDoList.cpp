@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>sy
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -20,13 +21,14 @@ int ReadOnlyFromFile()
     int lastTaskIndex = 0;
     // Open file
     ifstream myfile ("example.txt");
+    string line = "";
 
     if (myfile.is_open())
     {
-        /*while (getline(myfile, line))
+        while (getline(myfile, line))
         {
             cout << line << '\n';
-        }*/
+        }
         myfile.close();
     }
 
@@ -44,32 +46,37 @@ void WriteToTXTFile(int index, bool complete, string taskName, string aboutTask)
     ofstream myfile;
     myfile.open("example.txt", ios::app);
     myfile << "Writing this to a file.\n";
-    myfile << index << (boolalpha) << complete << taskName << aboutTask << endl;
+    myfile << index << " " << (boolalpha) << complete << " " << taskName << " " <<  aboutTask << endl;
     myfile.close();
 }
+
+
 
 void WriteTask()
 {
     int index = -1;
-    bool complete = false;
+    string complete = "FALSE";
+    bool isComplete = false;
     string taskName = "TASK NAME";
     string aboutTask = "ABOUT TASK";
-    
+    /* This should be awsome in Update task :)
     cout << " Is task already done?: ";
-    cin >> complete;
+    getline(cin, complete);*/
     cout << "\n Task Name: ";
-    cin >> taskName;
+    cin.ignore();
+    getline(cin,taskName);
     cout << "\n Task is about: ";
-    cin >> aboutTask;
+    getline(cin, aboutTask);
 
-    WriteToTXTFile(index, complete, taskName, aboutTask);
+    WriteToTXTFile(index, isComplete, taskName, aboutTask);
 
-    cout << "Writing to txt file ...";
+    cout << "Writing to txt file ..." << endl;
 }
 
 void GiveMeAllMyTask()
 {
     cout << "Here it is";
+    ReadOnlyFromFile();
 }
 
 void AddNewTask()
@@ -79,7 +86,7 @@ void AddNewTask()
 
 void UpdateTask()
 {
-    cout << "Updating";
+    cout << "Updating" << endl;
 }
 
 int main()
