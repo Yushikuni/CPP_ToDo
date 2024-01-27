@@ -11,7 +11,8 @@ using namespace std;
 // struktura pro todo ulohu
 struct ToDoTask
 {
-    bool complete;
+    int taskIndex;
+    bool taskComplete;
     string taskName;
     string taskAbout;
 };
@@ -126,32 +127,6 @@ int main()
         }
 
     } while (ui != 0);
-    /*
-    try
-    {
-        int ui = atoi(userInput.c_str());
-        try
-        {
-            switch (ui)
-            {
-            case 1:
-                AddNewTask(false, "Test", "About test is text about test :D");
-            default:
-                break;
-            }
-        }
-        catch (const std::exception&)
-        {
-            cout << "Convert from string to int was not successfull, programw will be terminated…";
-            return 0;
-        }
-    }
-    catch (const std::exception&)
-    {
-        cout << "User did not set number… program will be terminated…";
-        return 0;
-    }*/
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
