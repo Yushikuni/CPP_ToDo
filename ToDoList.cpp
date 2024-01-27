@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// struktura pro todo ulohu
+// struct fo todo task
 struct ToDoTask
 {
     int taskIndex;
