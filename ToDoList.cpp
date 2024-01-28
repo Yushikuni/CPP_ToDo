@@ -20,7 +20,6 @@ struct ToDoTask
 int ReadOnlyFromFile()
 {
     int lastTaskIndex = 0;
-    // Open file
     ifstream myfile ("example.txt");
     string line = "";
 
@@ -29,16 +28,13 @@ int ReadOnlyFromFile()
         while (getline(myfile, line))
         {
             cout << line << '\n';
+            lastTaskIndex++;
         }
         myfile.close();
     }
 
     else cout << "Unable to open file";
     
-    // Find indexes
-    // Count index up to last
-    // Return last index 
-
     return lastTaskIndex;
 }
 
