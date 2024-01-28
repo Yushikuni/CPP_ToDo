@@ -84,6 +84,8 @@ void AddNewTask()
 void UpdateTask()
 {
     cout << "Updating" << endl;
+    // Get task index
+    // Update status of struct
 }
 
 int main()
