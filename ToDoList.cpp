@@ -56,9 +56,7 @@ void WriteTask()
     bool isComplete = false;
     string taskName = "TASK NAME";
     string aboutTask = "ABOUT TASK";
-    /* This should be awsome in Update task :)
-    cout << " Is task already done?: ";
-    getline(cin, complete);*/
+
     cout << "\n Task Name: ";
     cin.ignore();
     getline(cin,taskName);
@@ -86,6 +84,12 @@ void UpdateTask()
     cout << "Updating" << endl;
     // Get task index
     // Update status of struct
+    //his should be awsome in Update task : )
+    cout << " Is task already done?: ";
+    //getline(cin, complete);
+    //updating only last index
+    //int lastIndex = ReadOnlyFromFile();
+
 }
 
 int main()
