@@ -42,7 +42,6 @@ void WriteToTXTFile(int index, bool complete, string taskName, string aboutTask)
 {
     ofstream myfile;
     myfile.open("example.txt", ios::app);
-    myfile << "Writing this to a file.\n";
     myfile << index << " " << (boolalpha) << complete << " " << taskName << " " <<  aboutTask << endl;
     myfile.close();
 }
@@ -51,7 +50,7 @@ void WriteToTXTFile(int index, bool complete, string taskName, string aboutTask)
 
 void WriteTask()
 {
-    int index = -1;
+    int index= ReadOnlyFromFile();
     string complete = "FALSE";
     bool isComplete = false;
     string taskName = "TASK NAME";
@@ -62,15 +61,13 @@ void WriteTask()
     getline(cin,taskName);
     cout << "\n Task is about: ";
     getline(cin, aboutTask);
-
+    
     WriteToTXTFile(index, isComplete, taskName, aboutTask);
-
-    cout << "Writing to txt file ..." << endl;
 }
 
 void GiveMeAllMyTask()
 {
-    cout << "Here it is";
+    cout << "Here it is:\n";
     ReadOnlyFromFile();
 }
 
@@ -89,6 +86,7 @@ void UpdateTask()
     //getline(cin, complete);
     //updating only last index
     //int lastIndex = ReadOnlyFromFile();
+
 
 }
 

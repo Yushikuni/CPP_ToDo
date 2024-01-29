@@ -1,22 +1,2 @@
-Writing this to a file.
--1falseTestingTesting
-Writing this to a file.
--1 false Random Task
-Writing this to a file.
--1 false Test JustTesting
-Writing this to a file.
--1 false  Tank
-Writing this to a file.
--1 false Tank 
-Writing this to a file.
--1 true  asd
-Writing this to a file.
--1 false NAN NAN
-Writing this to a file.
--1 false NAN NAN
-Writing this to a file.
--1 false  TEST
-Writing this to a file.
--1 false Test Name With Witespace ask is about testing a todo list with witespaces
-Writing this to a file.
--1 false Whitespaces Tesitng todo app with a lot of whitespaces
+0 false Setting new thing Setting some feature how to do to do list
+1 false Trying Trying to stay alive
