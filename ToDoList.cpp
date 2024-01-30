@@ -85,9 +85,7 @@ void UpdateTask()
     cout << " Is task already done?: ";
     //getline(cin, complete);
     //updating only last index
-    //int lastIndex = ReadOnlyFromFile();
-
-
+    int lastIndex = ReadOnlyFromFile();
 }
 
 int main()
@@ -115,6 +113,7 @@ int main()
             GiveMeAllMyTask();
             break;
         case 3:
+            cout << "updating in progress…" << endl;
             UpdateTask();
             break;
 
