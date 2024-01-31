@@ -78,14 +78,17 @@ void AddNewTask()
 
 void UpdateTask()
 {
-    cout << "Updating" << endl;
+    int lastIndex = ReadOnlyFromFile();
+    bool complete = false;
     // Get task index
     // Update status of struct
     //his should be awsome in Update task : )
     cout << " Is task already done?: ";
-    //getline(cin, complete);
+    cin.ignore();
+    cin >> complete;
     //updating only last index
-    int lastIndex = ReadOnlyFromFile();
+    WriteToTXTFile(lastIndex, complete, "IDK", "I do not know T-T >_<");
+    
 }
 
 int main()
