@@ -46,8 +46,6 @@ void WriteToTXTFile(int index, bool complete, string taskName, string aboutTask)
     myfile.close();
 }
 
-
-
 void WriteTask()
 {
     int index= ReadOnlyFromFile();
@@ -67,7 +65,6 @@ void WriteTask()
 
 void GiveMeAllMyTask()
 {
-    cout << "Here it is:\n";
     ReadOnlyFromFile();
 }
 
@@ -76,19 +73,46 @@ void AddNewTask()
     WriteTask();
 }
 
-void UpdateTask()
+void UpdateTask(int index, bool complete)
 {
-    int lastIndex = ReadOnlyFromFile();
-    bool complete = false;
-    // Get task index
-    // Update status of struct
-    //his should be awsome in Update task : )
-    cout << " Is task already done?: ";
-    cin.ignore();
-    cin >> complete;
-    //updating only last index
-    WriteToTXTFile(lastIndex, complete, "IDK", "I do not know T-T >_<");
-    
+    int lastIndex = 0;
+    fstream file("example.txt", ios::in | ios::out);
+    string line = "";
+
+    if (!file) {
+        cerr << "Unable to open file." << endl;
+        return;
+    }
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            if (lastIndex == index)
+            {
+                line = (complete ? "TRUE" : "FALSE");
+                break;
+            }
+            lastIndex++;
+        }
+    }
+
+    file.clear();
+    file.seekp(0, ios::beg);
+
+    while (getline(file, line))
+    {
+        if (lastIndex == index) 
+        {
+            file << line << endl;
+        }
+        else
+        {
+            file << line << endl;
+        }
+        lastIndex++;
+    }
+
+    file.close();    
 }
 
 int main()
@@ -96,6 +120,8 @@ int main()
     std::cout << "Hello World!\n";
     int ui = -1;
     string userInput = "";
+    int index;
+    bool complete = false;
     do
     {
         cout << " Option Menu: "
@@ -116,8 +142,15 @@ int main()
             GiveMeAllMyTask();
             break;
         case 3:
-            cout << "updating in progress…" << endl;
-            UpdateTask();
+            cout << "...updating in progress..." << endl;
+            cout << " Task index is: ";
+            cin.ignore();
+            cin >> index;
+            
+            cout << " Is task already done (1 for true, 0 for false)??: ";
+            cin >> complete;
+            UpdateTask(index,complete);
+
             break;
 
         case 0:

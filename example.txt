@@ -1,4 +1,1 @@
-0 false Setting new thing Setting some feature how to do to do list
-1 false Trying Trying to stay alive
-2 false Testing testing Just last test for update :)
-3 true IDK I do not know T-T >_<
+0 false Trying Trying to stay alive
