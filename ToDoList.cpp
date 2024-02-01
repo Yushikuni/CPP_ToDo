@@ -122,46 +122,58 @@ int main()
     string userInput = "";
     int index;
     bool complete = false;
-    do
+
+    try
     {
-        cout << " Option Menu: "
-            "\n 0 - For terminate programm"
-            "\n 1 - For Add New Task"
-            "\n 2 - For Print All Tasks"
-            "\n 3 - For Update Tasks"
-            "\n You Choose: ";
-        cin >> userInput;       
-        ui = atoi(userInput.c_str());
-
-        switch (ui)
+        do
         {
-        case 1:
-            AddNewTask();
-            break;
-        case 2:
-            GiveMeAllMyTask();
-            break;
-        case 3:
-            cout << "...updating in progress..." << endl;
-            cout << " Task index is: ";
-            cin.ignore();
-            cin >> index;
-            
-            cout << " Is task already done (1 for true, 0 for false)??: ";
-            cin >> complete;
-            UpdateTask(index,complete);
 
-            break;
+            cout << " Option Menu: "
+                "\n ANY OTHER KEYS WILL CASE INMIDIETLY TERMINATE A PROGRAM..."
+                "\n 0 - For terminate programm"
+                "\n 1 - For Add New Task"
+                "\n 2 - For Print All Tasks"
+                "\n 3 - For Update Tasks"
+                "\n You Choose: ";
+            cin >> userInput;
+            ui = atoi(userInput.c_str());
 
-        case 0:
-            cout << "Bay-Bay";
-            break;
+            switch (ui)
+            {
+            case 1:
+                AddNewTask();
+                break;
+            case 2:
+                GiveMeAllMyTask();
+                break;
+            case 3:
+                cout << "...updating in progress..." << endl;
+                cout << " Task index is: ";
+                cin.ignore();
+                cin >> index;
 
-        default:
-            break;
-        }
+                cout << " Is task already done (1 for true, 0 for false)??: ";
+                cin >> complete;
+                UpdateTask(index, complete);
 
-    } while (ui != 0);
+                break;
+
+            case 0:
+                cout << "Bay-Bay";
+                break;
+
+            default:
+                break;
+            }
+
+        } while (ui != 0);
+    }
+    catch (const std::exception&)
+    {
+        cout << "User did not set number… program will be terminated…";
+        return 0;
+    }
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
