@@ -118,7 +118,6 @@ void UpdateTask(int index, bool complete)
 
 int main()
 {
-    std::cout << "Hello World!\n";
     int ui = -1;
     string userInput = "";
     int index;
