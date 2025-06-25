@@ -49,18 +49,18 @@ ANY OTHER KEYS WILL IMMEDIATELY TERMINATE THE PROGRAM...
 You Choose:
 ```
 
-## 📂 File Structure
-🔹ToDoList.cpp
-🔹example.txt     ← generated automatically
-🔹README.md
+## 📂 File Structure <br/>
+🔹ToDoList.cpp<br/>
+🔹example.txt     ← generated automatically<br/>
+🔹README.md<br/>
 
-## 🧹 Possible Improvements
-🔹Refactor into multiple source files (TaskManager.cpp, main.cpp)
-🔹Add better parsing (support for multi-word input)
-🔹Store tasks in CSV or JSON format
-🔹Improve update logic (rewrite file instead of line edits)
-🔹Add timestamps and task categories
+## 🧹 Possible Improvements<br/>
+🔹Refactor into multiple source files (TaskManager.cpp, main.cpp)<br/>
+🔹Add better parsing (support for multi-word input)<br/>
+🔹Store tasks in CSV or JSON format<br/>
+🔹Improve update logic (rewrite file instead of line edits)<br/>
+🔹Add timestamps and task categories<br/>
 
-👩‍💻 Author
+👩‍💻 Author<br/>
 Created by Květuše (Yushikuni) – practicing real-world C++ logic and data persistence.
 
