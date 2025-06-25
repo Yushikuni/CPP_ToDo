@@ -50,16 +50,16 @@ You Choose:
 ```
 
 ## 📂 File Structure <br/>
-🔹ToDoList.cpp<br/>
-🔹example.txt     ← generated automatically<br/>
-🔹README.md<br/>
+- ToDoList.cpp<br/>
+- example.txt     ← generated automatically<br/>
+- README.md<br/>
 
 ## 🧹 Possible Improvements<br/>
-🔹Refactor into multiple source files (TaskManager.cpp, main.cpp)<br/>
-🔹Add better parsing (support for multi-word input)<br/>
-🔹Store tasks in CSV or JSON format<br/>
-🔹Improve update logic (rewrite file instead of line edits)<br/>
-🔹Add timestamps and task categories<br/>
+- Refactor into multiple source files (TaskManager.cpp, main.cpp)<br/>
+- Add better parsing (support for multi-word input)<br/>
+- Store tasks in CSV or JSON format<br/>
+- Improve update logic (rewrite file instead of line edits)<br/>
+- Add timestamps and task categories<br/>
 
 👩‍💻 Author<br/>
 Created by Květuše (Yushikuni) – practicing real-world C++ logic and data persistence.
