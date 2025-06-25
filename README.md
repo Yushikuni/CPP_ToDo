@@ -32,13 +32,13 @@ g++ ToDoList.cpp -o todo
 ./todo
 ```
 
-Compile (Windows):
+### Compile (Windows):
 ```bash
 g++ ToDoList.cpp -o todo.exe
 todo.exe
 ```
 
-Sample Output
+### Sample Output
 ```bash
 Option Menu: 
 ANY OTHER KEYS WILL IMMEDIATELY TERMINATE THE PROGRAM...
@@ -62,5 +62,5 @@ You Choose:
 - Add timestamps and task categories<br/>
 
 👩‍💻 Author<br/>
-Created by Květuše (Yushikuni) – practicing real-world C++ logic and data persistence.
+Made by Květuše (Yushikuni) – practicing real-world C++ logic and data persistence.
 
